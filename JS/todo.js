@@ -17,11 +17,7 @@ function deleteTask() {
 	var tasklist = document.querySelectorAll('div input');
 	for(var i = 0; i < tasklist.length; i++) {
 		if (tasklist[i].type == 'checkbox') {
-			for (let j = 0; j < arr.length; j++) {
-				if (arr[j].number == tasklist[i].id) {
-					arr[j].checked = tasklist[i].checked;
-				}
-			}
+			arr.find(elem => elem.number == i).checked = tasklist[i].checked;
     	}
   	}
 	refreshList();
